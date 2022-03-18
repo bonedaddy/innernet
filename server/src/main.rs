@@ -238,9 +238,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     pretty_env_logger::init();
     let opts = Opts::parse();
 
-    if unsafe { libc::getuid() } != 0 && !matches!(opts.command, Command::Completions { .. }) {
-        return Err("innernet-server must run as root.".into());
-    }
+    //if unsafe { libc::getuid() } != 0 && !matches!(opts.command, Command::Completions { .. }) {
+    //    return Err("innernet-server must run as root.".into());
+    //}
 
     let conf = ServerConfig::new(opts.config_dir, opts.data_dir);
 
